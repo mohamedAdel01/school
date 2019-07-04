@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { Row, Col, Button } from 'antd'
 
 class Main extends Component {
@@ -15,11 +16,13 @@ class Main extends Component {
             <section>
               <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEeUtS8IprtrykN1eqlCG4jGOyzR_hoVtGmawe-cOwFgtRDXna' alt='teacher' />
               <h1>Teacher</h1>
-              <Button className="gr" block size='large'>
-                Sign UP
+              <Button className='gr' block size='large'>
+                <Link to='/registration/teacher_signup'> Sign UP
+                </Link>
               </Button>
               <Button block type='primary' size='large'>
-                Sign IN
+                <Link to='/registration/teacher_signin'> Sign IN
+                </Link>
               </Button>
             </section>
           </Row>
@@ -33,11 +36,13 @@ class Main extends Component {
             <section>
               <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQboUrHs7Pn1HT11yBxInE9e9mUAT6uoDruv0ASRATk4aMs3DKUgw' alt='student' />
               <h1>Student</h1>
-              <Button className="gr" block size='large'>
-                Sign UP
+              <Button className='gr' block size='large'>
+                <Link to='/registration/student_signup'> Sign UP
+                </Link>
               </Button>
               <Button block type='primary' size='large'>
-                Sign IN
+                <Link to='/registration/student_signin'> Sign IN
+                </Link>
               </Button>
             </section>
           </Row>
