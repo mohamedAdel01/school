@@ -1,1 +1,33 @@
 @import '~antd/dist/antd.css';
+
+body{
+    overflow: hidden;
+}
+
+#Main h1 {
+    text-align: center;
+    color: white;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+
+#Main .teacher_sec{
+    background: #2A3633;
+    height: 650px;
+}
+
+#Main .student_sec{
+    background: #295D66;
+    height: 650px;
+}
+
+#Main img{
+    border-radius: 50%;
+    border: 5px solid #fff
+}
+
+.gr {
+    color: #2A3633 !important;
+    margin-bottom: 15px;
+}
