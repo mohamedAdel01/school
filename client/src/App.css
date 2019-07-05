@@ -125,3 +125,16 @@ img{
 #Student .teacher_sec{
     text-align: center
 }
+
+#Admin {
+    background: #ddd;
+    height: 650px;
+}
+
+#Admin .admin{
+    padding-top: 50px;
+}
+
+#Admin button{
+    margin-top: 20px;
+}
