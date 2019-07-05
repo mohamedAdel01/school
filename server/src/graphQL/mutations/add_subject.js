@@ -7,7 +7,7 @@ const {SubjectType} = require('../types/index')
 // MONGODB MODELS
 const SubjectModel = require('../../models/subject')
 
-const SubjectModel = {
+const SubjectMutation = {
   type: SubjectType,
   args: {
     name: {type: GraphQLString}
@@ -20,4 +20,4 @@ const SubjectModel = {
   }
 }
 
-module.exports = SubjectModel
+module.exports = SubjectMutation
