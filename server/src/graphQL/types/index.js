@@ -1,6 +1,6 @@
-const ObjectId = require('mongodb').ObjectID
 const graphql = require('graphql')
 const {GraphQLObjectType, GraphQLList, GraphQLInt, GraphQLString, GraphQLID} = graphql
+const ObjectId = require('mongodb').ObjectID
 const GradeModel = require('../../models/grade')
 const ClassroomModel = require('../../models/classroom')
 const TeacherModel = require('../../models/teacher')
