@@ -1,7 +1,7 @@
 // requirements
 const express = require('express')
 const graphqlHTTP = require('express-graphql')
-// const routes = require('./src/router/routes') // we will use graphql insteed
+// const routes = require('./src/router/routes') // i will use graphql insteed of normal routing
 const schema = require('./src/graphQL/schema')
 require('dotenv').config()
 
@@ -12,7 +12,7 @@ require('./config/mongo')
 const app = express()
 
 // routers
-// app.use('/api', routes)
+// app.use('/api', routes) if we need normal routing rathar than graphql
 
 // graphql for handle requests
 app.use('/graphql', graphqlHTTP({
