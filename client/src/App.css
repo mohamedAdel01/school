@@ -16,21 +16,25 @@ img{
 }
 
 /* Registration page */
-#Registration p.regestration {
+#Registration p.regestration,
+#Admin p.regestration{
     position: fixed;
     z-index: 1;
     top: 20px;
     left: 0;
 }
 
-#Registration p.admin {
+#Registration p.admin,
+#Admin p.admin {
     position: fixed;
     z-index: 1;
     top: 20px;
     right: 0 ;
 }
 
-#Registration p a {
+#Registration p a,
+#Admin p a
+{
     padding: 15px;
     color: #eee;
     font-weight: 700;
@@ -127,11 +131,13 @@ img{
 }
 
 #Admin {
+    padding-top: 100px;
+    text-align: center;
     background: #ddd;
     height: 650px;
 }
 
-#Admin .admin{
+#Admin div.admin{
     padding-top: 50px;
 }
 
