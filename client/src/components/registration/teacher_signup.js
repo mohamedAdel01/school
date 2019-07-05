@@ -16,6 +16,7 @@ class Teacher_Signup extends Component {
             <Input placeholder='username' />
             <Input placeholder='firstname' />
             <Input placeholder='lastname' />
+            <Input placeholder='image url...' />
             <Select mode='multiple' style={{ width: '100%', 'margin-top': '10px'}} placeholder='select your classrooms'>
               <Option key='1'>
                 class id
