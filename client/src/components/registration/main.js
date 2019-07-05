@@ -7,7 +7,7 @@ class Main extends Component {
     return (
       <div id='Main'>
         <Row type='flex' gutter={6}>
-          <Col md={{span: 24}} lg={{span: 12}}>
+          <Col md={{span: 12}} lg={{span: 12}}>
           <Row
             className='teacher_sec'
             type='flex'
@@ -27,7 +27,7 @@ class Main extends Component {
             </section>
           </Row>
           </Col>
-          <Col md={{span: 24}} lg={{span: 12}}>
+          <Col md={{span: 12}} lg={{span: 12}}>
           <Row
             className='student_sec'
             type='flex'
