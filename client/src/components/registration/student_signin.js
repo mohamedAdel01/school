@@ -11,9 +11,9 @@ class Student_Signin extends Component {
           <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQboUrHs7Pn1HT11yBxInE9e9mUAT6uoDruv0ASRATk4aMs3DKUgw' alt='student' />
           <h1>Sign IN</h1>
           <form>
-            <Input placeholder='email' onChange={e => this.handleSubmit(e, 'email')}/>
+            <Input placeholder='email' onChange={e => this.handleChanges(e, 'email')}/>
             <p className="danger">{this.state.error.email}</p>
-            <Input.Password placeholder='password' onChange={e =>this.handleSubmit(e, 'password')}/>
+            <Input.Password placeholder='password' onChange={e =>this.handleChanges(e, 'password')}/>
             <p className="danger">{this.state.error.password}</p>
             <Button onClick={this.submit.bind(this)} type='primary' block size='large'>
               Sign In
@@ -35,7 +35,7 @@ class Student_Signin extends Component {
   }
 
   // METHODS
-  handleSubmit(e, type) {
+  handleChanges(e, type) {
     this.setState({
       error: false,
       req: 

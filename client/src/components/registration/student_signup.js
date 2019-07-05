@@ -11,28 +11,31 @@ class Student_Signup extends Component {
           <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQboUrHs7Pn1HT11yBxInE9e9mUAT6uoDruv0ASRATk4aMs3DKUgw' alt='student' />
           <h1>Sign Up</h1>
           <form>
-            <Input placeholder='email' />
-            <Input.Password placeholder='password' />
-            <Input placeholder='username' />
-            <Input placeholder='firstname' />
-            <Input placeholder='lastname' />
-            <Input placeholder='image url...' />
-            <Select mode='multiple' style={{ width: '100%', 'marginTop': '10px'}} placeholder='select your classrooms'>
+            <Input placeholder='email' onChange={e => this.handleChanges(e, 'email')}/>
+            <p className="danger">{this.state.error.email}</p>
+            <Input.Password placeholder='password' onChange={e => this.handleChanges(e, 'password')}/>
+            <p className="danger">{this.state.error.password}</p>
+            <Input placeholder='username' onChange={e => this.handleChanges(e, 'username')}/>
+            <p className="danger">{this.state.error.username}</p>
+            <Input placeholder='firstname' onChange={e => this.handleChanges(e, 'firstname')}/>
+            <p className="danger">{this.state.error.firstname}</p>
+            <Input placeholder='lastname' onChange={e => this.handleChanges(e, 'lastname')}/>
+            <p className="danger">{this.state.error.lastname}</p>
+            <Input placeholder='image url...' onChange={e => this.handleChanges(e, 'image')}/>
+            <p className="danger">{this.state.error.image}</p>
+            <Select style={{ width: '100%', 'marginTop': '10px'}} placeholder='select grade' onChange={e => this.handleSelect(e, 'grade_id')}>
+              <Option key='1'>
+                grade id
+              </Option>
+            </Select>
+            <p className="danger">{this.state.error.grade_id}</p>
+            <Select style={{ width: '100%', 'marginTop': '10px'}} placeholder='select your classroom' onChange={e => this.handleSelect(e, 'class_id')}>
               <Option key='1'>
                 class id
               </Option>
             </Select>
-            <Select mode='multiple' style={{ width: '100%', 'marginTop': '10px'}} placeholder='select grades'>
-              <Option key='1'>
-                grades ids
-              </Option>
-            </Select>
-            <Select style={{ width: '100%', 'marginTop': '10px'}} placeholder='select your subject'>
-              <Option key='1'>
-                class id
-              </Option>
-            </Select>
-            <Button type='primary' block size='large'>
+            <p className="danger">{this.state.error.class_id}</p>
+            <Button onClick={this.submit.bind(this)} type='primary' block size='large'>
               Sign UP
             </Button>
           </form>
@@ -41,6 +44,61 @@ class Student_Signup extends Component {
       </div>
     )
   }
+
+    // DATA
+    state = {
+      req: {
+        email: null,
+        password: null,
+        username: null,
+        firstname: null,
+        lastname: null,
+        image: null,
+        grade_id: null,
+        class_id: null
+      },
+      error: false
+    }
+  
+    // METHODS
+    handleChanges(e, type) {
+      this.setState({
+        error: false,
+        req: 
+          {
+            ...this.state.req,
+            [type]: e.target.value
+          }
+        })
+    }
+
+    handleSelect(e, type) {
+      this.setState({
+        error: false,
+        req: 
+          {
+            ...this.state.req,
+            [type]: e
+          }
+        })
+    }
+  
+    submit() {
+      let check = Object.keys(this.state.req).filter(key => !this.state.req[key])
+      if(check.length) {
+        check.map(key => {
+          this.setState({
+            error: 
+              {
+                ...this.state.error,
+                [key]: "please fill this input"
+              }
+            })
+        })
+        return
+      }
+      console.log(this.state.req)
+    }
 }
 
 export default Student_Signup
