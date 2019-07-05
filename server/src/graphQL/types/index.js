@@ -13,7 +13,6 @@ const ClassroomType = new GraphQLObjectType({
     id: {type: GraphQLID},
     number: {type: GraphQLInt},
     subjects_ids: {type: new GraphQLList(GraphQLID)},
-    teachers_ids: {type: new GraphQLList(GraphQLID)},
 
     // --- relational data ---
 
@@ -34,7 +33,7 @@ const ClassroomType = new GraphQLObjectType({
     teachers: {
       type: new GraphQLList(TeacherType),
       resolve(parent, args) {
-        return TeacherModel.find({_id: {$in: parent.teachers_ids.map(id => ObjectId(id))}})
+        return TeacherModel.find({classrooms_ids: {$elemMatch: {$in: [parent.id]}}})
       }
     },
 
