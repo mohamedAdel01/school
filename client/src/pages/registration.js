@@ -11,8 +11,12 @@ class Registration extends Component {
     return (
       <BrowserRouter>
         <div id='Registration'>
-          <p>
+          <p className="regestration">
             <Link to='/registration'> Registration
+            </Link>
+          </p>
+          <p className="admin">
+            <Link to='/registration'> admin
             </Link>
           </p>
           <Switch>
