@@ -12,6 +12,7 @@ const {student, students} = require('./queries/student')
 const AddGrade = require("./mutations/add_grade")
 const AddSubject = require("./mutations/add_subject")
 const AddClassroom = require("./mutations/add_classroom")
+const AddTeacher = require("./mutations/add_teacher")
 
 
 // GRAPHQL ROOT QUERY
@@ -37,7 +38,7 @@ const Mutation = new GraphQLObjectType({
     AddGrade: AddGrade,
     AddSubject: AddSubject,
     AddClassroom: AddClassroom,
-    // AddTeacher: AddTeacher,
+    AddTeacher: AddTeacher,
     // AddStudent: AddStudent
   }
 })

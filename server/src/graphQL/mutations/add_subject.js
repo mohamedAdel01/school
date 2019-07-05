@@ -7,7 +7,7 @@ const {SubjectType} = require('../types/index')
 // MONGODB MODELS
 const SubjectModel = require('../../models/subject')
 
-const GradeMutation = {
+const SubjectModel = {
   type: SubjectType,
   args: {
     name: {type: GraphQLString}
@@ -20,4 +20,4 @@ const GradeMutation = {
   }
 }
 
-module.exports = GradeMutation
+module.exports = SubjectModel
