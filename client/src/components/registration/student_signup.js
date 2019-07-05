@@ -17,17 +17,17 @@ class Student_Signup extends Component {
             <Input placeholder='firstname' />
             <Input placeholder='lastname' />
             <Input placeholder='image url...' />
-            <Select mode='multiple' style={{ width: '100%', 'margin-top': '10px'}} placeholder='select your classrooms'>
+            <Select mode='multiple' style={{ width: '100%', 'marginTop': '10px'}} placeholder='select your classrooms'>
               <Option key='1'>
                 class id
               </Option>
             </Select>
-            <Select mode='multiple' style={{ width: '100%', 'margin-top': '10px'}} placeholder='select grades'>
+            <Select mode='multiple' style={{ width: '100%', 'marginTop': '10px'}} placeholder='select grades'>
               <Option key='1'>
                 grades ids
               </Option>
             </Select>
-            <Select style={{ width: '100%', 'margin-top': '10px'}} placeholder='select your subject'>
+            <Select style={{ width: '100%', 'marginTop': '10px'}} placeholder='select your subject'>
               <Option key='1'>
                 class id
               </Option>

@@ -30,12 +30,12 @@ class Admin extends Component {
           <h1>add classroom for testing</h1>
           <form>
             <Input placeholder='put only number of classroom' />
-            <Select style={{ width: '100%', 'margin-top': '10px'}} placeholder='select grade...'>
+            <Select style={{ width: '100%', 'marginTop': '10px'}} placeholder='select grade...'>
               <Option key='1'>
                 grade id
               </Option>
             </Select>
-            <Select mode='multiple' style={{ width: '100%', 'margin-top': '10px'}} placeholder='select subjects....'>
+            <Select mode='multiple' style={{ width: '100%', 'marginTop': '10px'}} placeholder='select subjects....'>
               <Option key='1'>
                 subjects id
               </Option>

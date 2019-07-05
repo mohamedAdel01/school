@@ -16,7 +16,7 @@ class Registration extends Component {
             </Link>
           </p>
           <p className="admin">
-            <Link to='/registration'> admin
+            <Link to='/admin'> admin
             </Link>
           </p>
           <Switch>
