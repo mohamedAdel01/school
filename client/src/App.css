@@ -15,6 +15,12 @@ img{
    margin-bottom: 15px;
 }
 
+.danger{
+    background: tomato;
+    color: white;
+    margin-bottom: 0;
+}
+
 /* Registration page */
 #Registration p.regestration,
 #Admin p.regestration{
