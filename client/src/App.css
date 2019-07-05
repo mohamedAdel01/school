@@ -16,6 +16,23 @@ img{
 }
 
 
+/* Registration page */
+#Registration p {
+    position: fixed;
+    z-index: 1;
+    top: 20px;
+    left: 0;
+}
+#Registration p a {
+    padding: 15px;
+    color: #eee;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 1px;
+    background: #337180;
+    box-shadow: 1px 1px 2px #555
+}
+
 /* main page */
 
 #Main h1 {
