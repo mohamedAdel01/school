@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import ApolloClient from 'apollo-boost'
 import { gql } from 'apollo-boost'
-
 import './App.css'
 
 // COMPONENTS
