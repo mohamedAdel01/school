@@ -2,13 +2,13 @@ const graphql = require('graphql')
 const {GraphQLString, GraphQLID, GraphQLList} = graphql
 
 // GRAPHQL TYPES
-const {StudentType} = require('../types/index')
+const {TeacherType} = require('../types/index')
 
 // MONGODB MODELS
-const StudentModel = require('../../models/student')
+const TeacherModel = require('../../models/teacher')
 
 const TeacherMutation = {
-  type: StudentType,
+  type: TeacherType,
   args: {
     username: {type: GraphQLString},
     password: {type: GraphQLString},
@@ -16,21 +16,23 @@ const TeacherMutation = {
     lastname: {type: GraphQLString},
     email: {type: GraphQLString},
     image: {type: GraphQLString},
-    classroom_id: {type: GraphQLID},
-    grade_id: {type: GraphQLID}
+    subject_id: {type: GraphQLID},
+    classrooms_ids: {type: new GraphQLList(GraphQLID)},
+    grades_ids: {type: new GraphQLList(GraphQLID)}
   },
   resolve(parent, args) {
-    let student = new StudentModel({
+    let teacher = new TeacherModel({
       username: args.username,
       password: args.password,
       firstname: args.firstname,
       lastname: args.lastname,
       email: args.email,
       image: args.image,
-      classroom_id: args.classroom_id,
-      grade_id: args.grade_id
+      subject_id: args.subject_id,
+      classrooms_ids: args.classrooms_ids,
+      grades_ids: args.grades_ids
     })
-    return student.save()
+    return teacher.save()
   }
 }
 
