@@ -29,12 +29,12 @@ class Student_Signup extends Component {
               </Option>
             </Select>
             <p className="danger">{this.state.error.grade_id}</p>
-            <Select style={{ width: '100%', 'marginTop': '10px'}} placeholder='select your classroom' onChange={e => this.handleSelect(e, 'class_id')}>
+            <Select style={{ width: '100%', 'marginTop': '10px'}} placeholder='select your classroom' onChange={e => this.handleSelect(e, 'classroom_id')}>
               <Option key='1'>
                 class id
               </Option>
             </Select>
-            <p className="danger">{this.state.error.class_id}</p>
+            <p className="danger">{this.state.error.classroom_id}</p>
             <Button onClick={this.submit.bind(this)} type='primary' block size='large'>
               Sign UP
             </Button>
@@ -55,7 +55,7 @@ class Student_Signup extends Component {
         lastname: null,
         image: null,
         grade_id: null,
-        class_id: null
+        classroom_id: null
       },
       error: false
     }

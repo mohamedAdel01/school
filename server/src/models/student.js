@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const student = new Schema({
   grade_id: String,
-  class_id: String,
+  classroom_id: String,
   username: {
     type: String,
     required: true,
