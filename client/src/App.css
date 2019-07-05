@@ -4,6 +4,20 @@ body{
     overflow: hidden;
 }
 
+/* default */
+img{
+   border-radius: 50%;
+   border: 5px solid #fff
+}
+
+.gr {
+   color: #2A3633 !important;
+   margin-bottom: 15px;
+}
+
+
+/* main page */
+
 #Main h1 {
     text-align: center;
     color: white;
@@ -22,12 +36,32 @@ body{
     height: 650px;
 }
 
-#Main img{
-    border-radius: 50%;
-    border: 5px solid #fff
+/* teacher sign in */
+.form{
+    padding-top: 20px;
+    text-align: center;
+    background: #aaa;
+    height: 650px;
 }
 
-.gr {
-    color: #2A3633 !important;
-    margin-bottom: 15px;
+.form h1{
+    text-align: center;
+    color: white;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+
+}
+
+.form input{
+    margin-top: 10px;
+}
+
+.form img{
+    box-shadow: 4px 4px 9px #888;
+    margin-bottom: 20px;
+    width: 125px;
+}
+
+.form button {
+    margin-top: 20px;
 }
