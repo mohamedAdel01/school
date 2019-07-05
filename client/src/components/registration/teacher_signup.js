@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { Input, Select, Row, Col, Button } from 'antd'
 const { Option } = Select
 

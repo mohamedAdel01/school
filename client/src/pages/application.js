@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom'
-import Teacher from '../components/registration/teacher'
+import Teacher from '../components/application/teacher'
 import Student from '../components/application/student'
 
 class Application extends Component {
