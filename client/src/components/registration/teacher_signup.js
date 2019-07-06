@@ -99,23 +99,21 @@ class Teacher_Signup extends Component {
       })
   }
 
-  submit(event) {
-    event.preventDefault()
-    // let check = Object.keys(this.state.req).filter(key => !this.state.req[key])
-    // if(check.length) {
-    //   check.map(key => {
-    //     this.setState({
-    //       error: 
-    //         {
-    //           ...this.state.error,
-    //           [key]: "please fill this input"
-    //         }
-    //       })
-    //   })
-    //   return
-    // }
-    // console.log(this.state.req)
-    console.log(this.props.AddTeacher)
+  submit() {
+    let check = Object.keys(this.state.req).filter(key => !this.state.req[key])
+    if(check.length) {
+      check.map(key => {
+        this.setState({
+          error: 
+            {
+              ...this.state.error,
+              [key]: "please fill this input"
+            }
+          })
+      })
+      return
+    }
+
     this.props.AddTeacher({
       variables: this.state.req
     })

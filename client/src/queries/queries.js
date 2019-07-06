@@ -40,4 +40,30 @@ const AddTeacher = gql`
     }
 `
 
-export { GetClassrooms, AddTeacher }
+const AddStudent = gql`
+    mutation(
+        $password: String,
+        $username: String,
+        $firstname: String,
+        $lastname: String,
+        $email: String,
+        $image: String,
+        $classroom_id: ID,
+        $grades_id: [ID]
+        ){
+        AddTeacher(      
+            password: $password,
+            username: $username,
+            firstname: $firstname,
+            lastname: $lastname,
+            email: $email,
+            image: $image,
+            classroom_id: $classroom_id,
+            grade_id: $grade_id
+        ) {
+            id
+        }
+    }
+`
+
+export { GetClassrooms, AddTeacher, AddStudent }
