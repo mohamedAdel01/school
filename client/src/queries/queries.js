@@ -90,7 +90,7 @@ const GetTeacher = gql`
 const GetStudents = gql`
     {
         classroom{
-            name
+            number
         }
     }
 `
