@@ -76,9 +76,9 @@ const StudentType = new GraphQLObjectType({
     // relational data
 
     classroom: {
-      type: new GraphQLList(ClassroomType),
+      type: ClassroomType,
       resolve(parent, args) {
-        return ClassroomModel.findById(parent.class_id)
+        return ClassroomModel.findById(parent.classroom_id)
       }
     }
   })

@@ -6,6 +6,7 @@ const { Option } = Select
 
 class Student_Signup extends Component {
   render () {
+    // console.log(this.props)
     return (
       <div id='Student_Signup' className='form'>
         {!this.props.GetClassrooms.loading && (
@@ -107,7 +108,7 @@ class Student_Signup extends Component {
       this.props.AddStudent({
         variables: this.state.req
       })
-
+      
     }
 }
 
