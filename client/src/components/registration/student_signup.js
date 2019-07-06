@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import { Input, Select, Row, Col, Button } from 'antd'
+import { graphql, compose } from "react-apollo";
+import {GetClassrooms, AddStudent} from "../../queries/queries"
 const { Option } = Select
 
 class Student_Signup extends Component {
   render () {
     return (
       <div id='Student_Signup' className='form'>
+        {!this.props.GetClassrooms.loading && (
         <Row type='flex' justify='center' align='middle'>
           <Col md={{span: 16}} lg={{span: 10}} xs={{span: 20}}>
           <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQboUrHs7Pn1HT11yBxInE9e9mUAT6uoDruv0ASRATk4aMs3DKUgw' alt='student' />
@@ -23,16 +26,18 @@ class Student_Signup extends Component {
             <p className="danger">{this.state.error.lastname}</p>
             <Input placeholder='image url...' onChange={e => this.handleChanges(e, 'image')}/>
             <p className="danger">{this.state.error.image}</p>
-            <Select style={{ width: '100%', 'marginTop': '10px'}} placeholder='select grade' onChange={e => this.handleSelect(e, 'grade_id')}>
+            {/* <Select style={{ width: '100%', 'marginTop': '10px'}} placeholder='select grade' onChange={e => this.handleSelect(e, 'grade_id')}>
               <Option key='1'>
                 grade id
               </Option>
-            </Select>
-            <p className="danger">{this.state.error.grade_id}</p>
+            </Select> */}
+            {/* <p className="danger">{this.state.error.grade_id}</p> */}
             <Select style={{ width: '100%', 'marginTop': '10px'}} placeholder='select your classroom' onChange={e => this.handleSelect(e, 'classroom_id')}>
-              <Option key='1'>
-                class id
-              </Option>
+              {this.props.GetClassrooms.classrooms.map(classroom => (
+                <Option key={classroom.id}>
+                  {classroom.number}
+                </Option>
+              ))}
             </Select>
             <p className="danger">{this.state.error.classroom_id}</p>
             <Button onClick={this.submit.bind(this)} type='primary' block size='large'>
@@ -41,6 +46,7 @@ class Student_Signup extends Component {
           </form>
           </Col>
         </Row>
+        )}
       </div>
     )
   }
@@ -54,7 +60,7 @@ class Student_Signup extends Component {
         firstname: null,
         lastname: null,
         image: null,
-        grade_id: null,
+        // grade_id: null,
         classroom_id: null
       },
       error: false
@@ -97,8 +103,15 @@ class Student_Signup extends Component {
         })
         return
       }
-      console.log(this.state.req)
+
+      this.props.AddStudent({
+        variables: this.state.req
+      })
+
     }
 }
 
-export default Student_Signup
+export default compose(
+  graphql(GetClassrooms, {name: 'GetClassrooms'}),
+  graphql(AddStudent, {name: 'AddStudent'})
+)(Student_Signup)

@@ -49,9 +49,9 @@ const AddStudent = gql`
         $email: String,
         $image: String,
         $classroom_id: ID,
-        $grades_id: [ID]
+        $grade_id: ID
         ){
-        AddTeacher(      
+        AddStudent(      
             password: $password,
             username: $username,
             firstname: $firstname,
