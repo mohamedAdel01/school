@@ -21,6 +21,14 @@ img{
     margin-bottom: 0;
 }
 
+.number{
+    font-weight: bold;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 2px 10px;
+
+}
+
 #Home{
     background-image: linear-gradient(
         rgba(99, 71, 226, 0.349),

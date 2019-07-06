@@ -23,14 +23,16 @@ class Teacher extends Component {
              <h2>{teacher.subject.name}</h2>
              </Col>
              <Col span={16}>
-              {teacher.classrooms.map(classroom => (
+             {teacher.classrooms.map(classroom => (
                 <Button
-                  key={classroom.id}
-                  // onClick={this.getStudens(classroom)}
+                key={classroom.id}
+                  onClick={(e) => {this.getStudens(classroom)}}
                   type='primary'
                   size='large'>
-                  classroom:
-                  {classroom.number}
+                  classroom: &nbsp;
+                  <span className="number">
+                    {classroom.number}
+                  </span>
                 </Button>
               ))}
              </Col>
