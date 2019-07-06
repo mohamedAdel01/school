@@ -6,7 +6,6 @@ import { GetStudents, GetTeacher } from '../../queries/queries'
 class Teacher extends Component {
   render () {
     let teacher = this.props.GetTeacher.teacher
-    console.log(teacher)
     return (
       <div id='Teacher'>
         {!this.props.GetTeacher.loading && (
@@ -24,15 +23,17 @@ class Teacher extends Component {
              <h2>{teacher.subject.name}</h2>
              </Col>
              <Col span={16}>
-             <Button type='primary' size='large'>
-               class: 2
-             </Button>
-             <Button type='primary' size='large'>
-               class: 2
-             </Button>
-             <Button type='primary' size='large'>
-               class: 2
-             </Button>
+             {teacher.classrooms.map(classroom => (
+                <div key={classroom.id}>
+                  <Button
+                    onClick={this.getStudens(classroom)}
+                    type='primary'
+                    size='large'>
+                    classroom:
+                    {classroom.number}
+                  </Button>
+                </div>
+              ))}
              </Col>
            </Row>
            <hr/>
@@ -40,26 +41,18 @@ class Teacher extends Component {
              <p>
                mohamed adel
              </p>
-             <p>
-               student
-             </p>
-             <p>
-               student
-             </p>
-             <p>
-               student
-             </p>
-             <p>
-               student
-             </p>
-             <p>
-               student
-             </p>
            </Row>
          </div>
          )}
       </div>
     )
+  }
+
+  getStudens = (id) => {
+    console.log(id)
+  // this.props.GetStudents({
+  //   variables: id
+  // })
   }
 }
 
