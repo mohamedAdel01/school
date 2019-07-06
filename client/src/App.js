@@ -8,6 +8,7 @@ import './App.css'
 import Registration from './pages/registration'
 import Application from './pages/application'
 import Admin from './pages/admin'
+import Home from './pages/home'
 
 const client = new ApolloClient({
   uri: 'http://localhost:5000/graphql'
@@ -20,7 +21,7 @@ class App extends Component {
         <BrowserRouter>
           <div id='main'>
             <Switch>
-              {/* <Route exact path='/' component={Login}></Route> */}
+              <Route exact path='/' component={Home}></Route>
               <Route path='/registration' component={Registration}></Route>
               <Route path='/application' component={Application}></Route>
               <Route path='/admin' component={Admin}></Route>

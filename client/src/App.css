@@ -21,6 +21,36 @@ img{
     margin-bottom: 0;
 }
 
+#Home{
+    background-image: linear-gradient(
+        rgba(99, 71, 226, 0.349),
+        rgba(0, 0, 0, 0.8)
+      ),
+    url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/UD7CEz6/videoblocks-empty-high-school-classroom_ssvhzwlpx_thumbnail-full01.png');
+    background-size: cover;
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    padding-top: 300px;
+}
+
+#Home button {
+    text-align: center;
+    background:#2F5B78;
+    width: 800px;
+    height: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 6px 7px 12px#000;
+    
+}
+
+#Home a{
+    color: white;
+    font-size: 30px;
+}
+
 /* Registration page */
 #Registration p.regestration,
 #Admin p.regestration{
