@@ -66,4 +66,33 @@ const AddStudent = gql`
     }
 `
 
-export { GetClassrooms, AddTeacher, AddStudent }
+const GetTeacher = gql`
+    query($id: ID) {
+        teacher(id: $id) {
+            id
+            email
+            username
+            firstname
+            lastname
+            image
+            subject{
+                id
+                name
+            }
+            classrooms{
+                id
+                number
+            }
+        }
+    }
+`
+
+const GetStudents = gql`
+    {
+        classroom{
+            name
+        }
+    }
+`
+
+export { GetClassrooms, AddTeacher, AddStudent, GetTeacher, GetStudents }

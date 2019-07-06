@@ -116,11 +116,10 @@ class Teacher_Signup extends Component {
 
     this.props.AddTeacher({
       variables: this.state.req
+    }).then(res => {
+      localStorage.setItem('id', res.data.AddTeacher.id)
+      this.props.history.push(`/application/teacher?id=${res.data.AddTeacher.id}`)
     })
-
-      // this.props.history.push('/dashboard')
-
-
   }
 }
 
