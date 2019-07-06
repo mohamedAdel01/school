@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Row, Col, Button } from 'antd'
 import { graphql } from "react-apollo";
-import {GetGrades} from "../../queries/queries"
+// import {GetGrades} from "../../queries/queries"
 
 class Teacher extends Component {
   render () {
@@ -57,4 +57,4 @@ class Teacher extends Component {
   }
 }
 
-export default graphql(GetGrades)(Teacher)
+export default Teacher
