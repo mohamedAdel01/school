@@ -1,7 +1,8 @@
 # school
-**Nodejs mongodb GraphQL ReactJs** 
 
-**to run project please follow this steps**
+**technologies in this site => Nodejs mongodb GraphQL ReactJs** 
+
+##**to run project please follow this steps**
 
 .first run server
 1) open cmd and navigate to cd "/server"
