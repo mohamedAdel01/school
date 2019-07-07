@@ -88,9 +88,13 @@ const GetTeacher = gql`
 `
 
 const GetStudents = gql`
-    {
-        classroom{
-            number
+    query($id: ID){
+        classroom(id: $id){
+            id
+            students{
+                id
+                username
+            }
         }
     }
 `

@@ -19,14 +19,14 @@ class App extends Component {
     return (
       <ApolloProvider client={client}>
         <BrowserRouter>
-          <div id='main'>
-            <Switch>
-              <Route exact path='/' component={Home}></Route>
-              <Route path='/registration' component={Registration}></Route>
-              <Route path='/application' component={Application}></Route>
-              <Route path='/admin' component={Admin}></Route>
-            </Switch>
-          </div>
+             <div id='main'>
+               <Switch>
+                 <Route exact path='/' component={Home}></Route>
+                 <Route path='/registration' component={Registration}></Route>
+                 <Route path='/application' component={Application}></Route>
+                 <Route path='/admin' component={Admin}></Route>
+               </Switch>
+             </div>
         </BrowserRouter>
       </ApolloProvider>
     )

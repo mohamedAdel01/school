@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { Row, Col, Button } from 'antd'
-import { graphql, compose } from 'react-apollo'
+import { graphql, compose, Query } from 'react-apollo'
 import { GetStudents, GetTeacher } from '../../queries/queries'
 
 class Teacher extends Component {
   render () {
     let teacher = this.props.GetTeacher.teacher
+    console.log(this.props)
     return (
       <div id='Teacher'>
         {!this.props.GetTeacher.loading && (
@@ -25,7 +26,7 @@ class Teacher extends Component {
              <Col span={16}>
              {teacher.classrooms.map(classroom => (
                 <Button
-                key={classroom.id}
+                  key={classroom.id}
                   onClick={(e) => {this.getStudens(classroom)}}
                   type='primary'
                   size='large'>
@@ -39,9 +40,25 @@ class Teacher extends Component {
            </Row>
            <hr/>
            <Row>
-             <p>
-               mohamed adel
-             </p>
+             <h3>students in classroom: {this.state.classNum}</h3>
+             {this.state.classId && (
+              <Query query={GetStudents} variables={{id: this.state.classId}}>
+                {({ data, loading, error }) => {
+                  if (loading) return "you didn't choose classroom";
+                  if (error) return <p>ERROR: {error.message}</p>;
+
+                  return (
+                    <div className="students">
+                      {data.classroom.students.map(student => (
+                        <p key={student.id}>
+                            {student.username}
+                        </p>
+                      ))}          
+                    </div>
+                  );
+                }}
+              </Query>
+             )}
            </Row>
          </div>
          )}
@@ -49,24 +66,35 @@ class Teacher extends Component {
     )
   }
 
-  getStudens = (id) => {
-    console.log(id)
-  // this.props.GetStudents({
-  //   variables: id
-  // })
+  state = {
+    classId: null,
+    classNum: null
+  }
+
+  getStudens = (classroom) => {
+    console.log(this.props)
+    this.setState({
+      classId: classroom.id,
+      classNum: classroom.number
+    })
+    //  this.props.client.query({
+    //   query: GetStudents,
+    //   variables: {
+    //     id: id
+    //   }
+    // });
+    
   }
 }
 
-export default compose(
+export default 
   graphql(GetTeacher, {
     name: 'GetTeacher',
-    options: (props) => {
+    options: () => {
       return {
         variables: {
           id: localStorage.getItem('id')
         }
       }
     }
-  }),
-  graphql(GetStudents, {name: 'GetStudents'})
-)(Teacher)
+  })(Teacher)

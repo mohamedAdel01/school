@@ -40,7 +40,7 @@ const ClassroomType = new GraphQLObjectType({
     students: {
       type: new GraphQLList(StudentType),
       resolve(parent, args) {
-        return StudentModel.find({class_id: parent.id})
+        return StudentModel.find({classroom_id: parent.id})
       }
     }
   })

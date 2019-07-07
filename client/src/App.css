@@ -156,6 +156,15 @@ img{
     margin: 10px
 }
 
+#Teacher h3{
+    margin-left: 50px;
+    font-size: 22px;
+}
+
+#Teacher .students{
+    margin: 0 50px
+}
+
 #Teacher p,
 #Student p{
     border: 1px solid #2F5B78;
