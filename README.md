@@ -23,3 +23,13 @@ GraphQL
 -
 ReactJs
 -
+
+to see the task you only need to signup as teacher and select all class number to see more students then press sign up and you will navigated to teacher page you can see classes press on it to see student in it
+
+
+-some issues missed in this website but i know how to made but there is no time for it but i will menssion it for you: 
+Authentication
+multilanguage
+validation for fields
+signIN for both teacher and student
+student page
