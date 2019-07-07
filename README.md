@@ -41,3 +41,31 @@ student page
 i didn't care about adding more features on front-end but i mainly focused on backend and with making relation data you can go to 
 http://localhost:5000/graphql after runing server and make some graphql queries and see data and it's relation that give you ability to 
 get any data from other one you can see relation on the right hand side of the page you will see **"Root Types"** ... study project well and you will see what i mean
+
+i think this query will illustrate what i mean.. put this in graphql server and see relation between items.
+`
+{
+  teachers{
+    id
+    username
+    firstname
+    lastname
+    subject{
+      id
+      name
+    }
+    classrooms {
+      id
+      number
+      students{
+        username
+        firstname
+        lastname
+        id
+      }
+    }
+  }
+}
+`
+
+thank you for reading.
