@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import { Row, Col, Button } from 'antd'
+import { graphql } from 'react-apollo'
+import { GetStudent } from '../../queries/queries'
 
 class Student extends Component {
   render () {
+    console.log(this.props)
     return (
       <div id='Student'>
         <Row type='flex' align='middle'>
@@ -52,4 +55,14 @@ class Student extends Component {
   }
 }
 
-export default Student
+export default graphql(GetStudent, {
+  options: () => {
+    return {
+      name: "GetStudent",
+      variables: {
+        id: localStorage.getItem('student_id')
+      }
+
+    }
+  }
+})(Student)
