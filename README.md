@@ -1,4 +1,5 @@
 # school
+**Nodejs mongodb GraphQL ReactJs** 
 *to run project please follow this steps*
 
 .first run server
@@ -13,10 +14,6 @@
 6) yarn start
 
 -----
-used technologies in this site => 
--
-
-**Nodejs mongodb GraphQL ReactJs** 
 
 
 to see the task you only need to signup as teacher and select all class number to see more students then press sign up and you will navigated to teacher page you can see classes press on it to see student in it
