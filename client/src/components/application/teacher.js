@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Row, Col, Button } from 'antd'
-import { graphql, compose, Query } from 'react-apollo'
+import { graphql, Query } from 'react-apollo'
 import { GetStudents, GetTeacher } from '../../queries/queries'
 
 class Teacher extends Component {
@@ -76,14 +76,7 @@ class Teacher extends Component {
     this.setState({
       classId: classroom.id,
       classNum: classroom.number
-    })
-    //  this.props.client.query({
-    //   query: GetStudents,
-    //   variables: {
-    //     id: id
-    //   }
-    // });
-    
+    })    
   }
 }
 
