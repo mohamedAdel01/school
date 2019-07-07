@@ -43,7 +43,8 @@ http://localhost:5000/graphql after runing server and make some graphql queries 
 get any data from other one you can see relation on the right hand side of the page you will see **"Root Types"** ... study project well and you will see what i mean
 
 i think this query will illustrate what i mean.. put this in graphql server and see relation between items.
-`
+
+>
 {
   teachers{
     id
@@ -66,6 +67,6 @@ i think this query will illustrate what i mean.. put this in graphql server and 
     }
   }
 }
-`
+>
 
 thank you for reading.
