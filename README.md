@@ -44,7 +44,7 @@ get any data from other one you can see relation on the right hand side of the p
 
 i think this query will illustrate what i mean.. put this in graphql server and see relation between items.
 
->
+```
 {
   teachers{
     id
@@ -67,6 +67,6 @@ i think this query will illustrate what i mean.. put this in graphql server and 
     }
   }
 }
->
+```
 
 thank you for reading.
