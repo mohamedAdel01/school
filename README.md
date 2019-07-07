@@ -29,7 +29,11 @@ to see the task you only need to signup as teacher and select all class number t
 
 -some issues missed in this website but i know how to made but there is no time for it but i will menssion it for you: 
 Authentication
+
 multilanguage
+
 validation for fields
+
 signIN for both teacher and student
+
 student page
