@@ -9,11 +9,11 @@ const {teacher, teachers} = require('./queries/teacher')
 const {student, students} = require('./queries/student')
 
 // MUTATIONS
-const AddGrade = require("./mutations/add_grade")
-const AddSubject = require("./mutations/add_subject")
-const AddClassroom = require("./mutations/add_classroom")
-const AddTeacher = require("./mutations/add_teacher")
-const AddStudent = require("./mutations/add_student")
+// const AddGrade = require("./mutations/add_grade")
+// const AddSubject = require("./mutations/add_subject")
+// const AddClassroom = require("./mutations/add_classroom")
+// const AddTeacher = require("./mutations/add_teacher")
+// const AddStudent = require("./mutations/add_student")
 
 
 // GRAPHQL ROOT QUERY
@@ -33,18 +33,18 @@ const RootQuery = new GraphQLObjectType({
   }
 })
 
-const Mutation = new GraphQLObjectType({
-  name: 'Mutations',
-  fields: {
-    AddGrade: AddGrade,
-    AddSubject: AddSubject,
-    AddClassroom: AddClassroom,
-    AddTeacher: AddTeacher,
-    AddStudent: AddStudent
-  }
-})
+// const Mutation = new GraphQLObjectType({
+//   name: 'Mutations',
+//   fields: {
+//     AddGrade: AddGrade,
+//     AddSubject: AddSubject,
+//     AddClassroom: AddClassroom,
+//     AddTeacher: AddTeacher,
+//     AddStudent: AddStudent
+//   }
+// })
 
 module.exports = new GraphQLSchema({
   query: RootQuery,
-  mutation: Mutation
+  // mutation: Mutation
 })

@@ -1,25 +1,30 @@
-# school learning tutorial
-**in this tutorial i will explain to how to build this school website <br> if you need to see full project you can go to master branch and make and follow steps to run it.**
+# school learning tutorial les_2
+**for now i will comment any code i had explained it before or any codes that we will learn it later**
 
 
-before you start you need some knoldge about **nodeJs mongoDB graphQl reactJs apollo**
 
 ## let's get started
-we will run server and make mongoDB models
-1) make folder called server in any place in your computer then navigate to it in CMD then type `yarn init` or `npm init` and follow steps to make package.json file.
-2) npm install or yarn install for `express cors dotenv express-graphql graphql mongoose` 
-3) make `index.js` file in server folder
-4) in this file type the code that not commented because the commented one we will use it later
-5) in `index.js` file i tried to explain the purpose of every single line code
-6) now make new folder called config we will make configuration for mongodb on it
-in this file we will connect to mongo db , i will explain every thing in this file
-7) now go to your cmd and navigate to index file then run `node index` and now your server is runing you can see in console the messages
+we will make graphQl types for graphql schema
 
-**now let's make our models**
+1) make new folder `graphQL` inside it make folder called `type` then make `index.js` file<br> **we should make all types in one file because `module cycle problem ` you can search about it to understand more**
 
-8) now we will make schemas .. this is about the structure for the data that will be in the data base <br> for exp.. teacher will have username and it will be string and password , firstname, lastname and some arrays <br> you can find all models in `models folder`
+2) any graphql type object consist of 2 thing 
+name of it and it should be uniquie and fields which contain type of fields that we want graphQL to recogonize on the data we get from mongo database
 
-9) now you had finished from runing server and making data base models<br> we will use them later to make `save to database or find from database`
+3) for now ignore any relation data i will comment it by the way
 
-10) please ignore for now any files or folders i didn't mention them here and i will explain them in next lessons.
+4) now make query files which make graphql connect to fields in mongodb schema to let graphql get specific data only .. so let us make a new folder in graphQL with name `queries` <br>
+first at any file let's say classroom we will <br> import type for it from types files and get mongo model for it
+
+5) any query consists of `type` which is type that we made before , and `args` which that we will pass in the query later like id of class that we will get and `resolve` and this is the function that we will do with this query like get data and save data this will be in mutation later
+
+6) now we need to make schema and add this query inside it .. let's make schema file and add this queries 
+
+7) let's now make nodeJs know that we will use graphQl add the graphQL code this will be in the index.js file
+
+8) now run node app with `node index` and go to ` http://localhost:5000/graphql` and play with graphQl queries for now will return `null` because there is no data in database but look at right you will see in documentation in **"Root Types"** you will see your queries 
+
+in the next we will talk about relation between data.
+
+ 
 

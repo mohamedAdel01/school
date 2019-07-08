@@ -8,6 +8,7 @@ const {ClassroomType} = require('../types/index')
 const ClassroomModel = require('../../models/classroom')
 
 const ClassroomQueries = {
+  // query for find one classroom with id of it
   classroom: {
     type: ClassroomType,
     args: {id: {type: GraphQLID}},
@@ -15,6 +16,7 @@ const ClassroomQueries = {
       return ClassroomModel.findById(args.id)
     }
   },
+  // query for find all classrooms
   classrooms: {
     type: new GraphQLList(ClassroomType),
     resolve() {
@@ -23,4 +25,5 @@ const ClassroomQueries = {
   }
 }
 
+// export query to use in somewhere else
 module.exports = ClassroomQueries
