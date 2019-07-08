@@ -1,5 +1,8 @@
+// require mongoose
 const mongoose = require('mongoose')
 
+// connect to mongoose with the uri for the database
+//  you will find it in .env file
 mongoose.connect(process.env.MONGO_URI + process.env.DB_NAME, {
   useNewUrlParser: true,
   useCreateIndex: true
